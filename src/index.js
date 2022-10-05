@@ -1,14 +1,17 @@
-import BasicForm from 'Modules/BasicForm';
-import NestedForm from 'Modules/NestedForm';
+import { Grid } from '@mui/material';
+import catgif from 'asset/image/catflappy.gif';
 import ArrayForm from 'Modules/ArrayForm';
+import BasicArray from 'Modules/BasicArray';
+import BasicForm from 'Modules/BasicForm';
+import NestedArray from 'Modules/NestedArray';
+import NestedForm from 'Modules/NestedForm';
+import TabForm from 'Modules/TabForm';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Grid } from '@mui/material';
-import catgif from 'asset/image/catflappy.gif';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,7 +35,10 @@ root.render(
 					/>
 					<Route path='basic' element={<BasicForm />} />
 					<Route path='nested' element={<NestedForm />} />
+					<Route path='tab' element={<TabForm />} />
+					<Route path='basic-array' element={<BasicArray />} />
 					<Route path='array' element={<ArrayForm />} />
+					<Route path='nested-array' element={<NestedArray />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

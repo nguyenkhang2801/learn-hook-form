@@ -33,9 +33,24 @@ function App() {
 				<NavLink to='/'>
 					<span className='material-icons'>arrow_back_ios</span> Back
 				</NavLink>
-				<NavLink to='/basic'>Basic</NavLink>
-				<NavLink to='/nested'>Nested</NavLink>
-				<NavLink to='/array'>Array</NavLink>
+				<NavLink to='/basic' end>
+					Basic
+				</NavLink>
+				<NavLink to='/nested' end>
+					Nested
+				</NavLink>
+				<NavLink to='/tab' end>
+					Tab
+				</NavLink>
+				<NavLink to='/basic-array' end>
+					Basic Array
+				</NavLink>
+				<NavLink to='/array' end>
+					Array
+				</NavLink>
+				<NavLink to='/nested-array' end>
+					Nested Array
+				</NavLink>
 			</Stack>
 			<Grid width='calc(100% - 360px)' p={4}>
 				<Outlet />
