@@ -7,22 +7,19 @@ function App() {
 	return (
 		<Grid container height='100vh'>
 			<Stack
-				width='360px'
+				width='200px'
 				pb={4}
 				pt={4}
 				sx={{
 					background: '#eee',
 					'& > a': {
 						height: '48px',
-						padding: '0px 48px',
+						padding: '0px 24px',
 						display: 'flex',
 						alignItems: 'center',
 						width: 1,
 						'&:hover': {
 							background: '#ddd',
-						},
-						'&:not(:first-child)': {
-							paddingLeft: 9,
 						},
 						'&.active:not(:first-child)': {
 							borderRight: '4px solid #0d0d99',
@@ -45,14 +42,20 @@ function App() {
 				<NavLink to='/basic-array' end>
 					Basic Array
 				</NavLink>
+				<NavLink to='/logic' end>
+					Logic Array
+				</NavLink>
 				<NavLink to='/array' end>
 					Array
 				</NavLink>
 				<NavLink to='/nested-array' end>
 					Nested Array
 				</NavLink>
+				<NavLink to='/infinity-array' end>
+					Infiniti Array
+				</NavLink>
 			</Stack>
-			<Grid width='calc(100% - 360px)' p={4}>
+			<Grid width='calc(100% - 200px)' p={4}>
 				<Outlet />
 			</Grid>
 		</Grid>

@@ -81,7 +81,7 @@ const ArrayForm = () => {
 
 	return (
 		<Grid container>
-			<h1>Array (Nested) Form</h1>
+			<h1>Array Form</h1>
 			<Grid container>
 				Hard Mode <Switch checked={hardMode} onChange={setHardMode} />
 			</Grid>

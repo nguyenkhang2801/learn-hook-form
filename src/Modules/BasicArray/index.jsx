@@ -35,7 +35,7 @@ const BasicArray = () => {
 
 	return (
 		<Grid container>
-			<h1>Nested Form</h1>
+			<h1>Basic Array Form</h1>
 			<Stack mt={2} p={2} direction='row' width={1} spacing={1}>
 				<Grid
 					container

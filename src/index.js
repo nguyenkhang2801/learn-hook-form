@@ -1,8 +1,10 @@
 import { Grid } from '@mui/material';
 import catgif from 'asset/image/catflappy.gif';
 import ArrayForm from 'Modules/ArrayForm';
+import ArrayLogic from 'Modules/ArrayLogic';
 import BasicArray from 'Modules/BasicArray';
 import BasicForm from 'Modules/BasicForm';
+import InfinityArray from 'Modules/InfinityArray';
 import NestedArray from 'Modules/NestedArray';
 import NestedForm from 'Modules/NestedForm';
 import TabForm from 'Modules/TabForm';
@@ -37,8 +39,10 @@ root.render(
 					<Route path='nested' element={<NestedForm />} />
 					<Route path='tab' element={<TabForm />} />
 					<Route path='basic-array' element={<BasicArray />} />
+					<Route path='logic' element={<ArrayLogic />} />
 					<Route path='array' element={<ArrayForm />} />
 					<Route path='nested-array' element={<NestedArray />} />
+					<Route path='infinity-array' element={<InfinityArray />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
