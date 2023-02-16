@@ -5,6 +5,7 @@ import ArrayForm from 'Modules/ArrayForm';
 import ArrayLogic from 'Modules/ArrayLogic';
 import BasicArray from 'Modules/BasicArray';
 import BasicForm from 'Modules/BasicForm';
+import Exercise from 'Modules/Exercise';
 import InfinityArray from 'Modules/InfinityArray';
 import NestedArray from 'Modules/NestedArray';
 import NestedForm from 'Modules/NestedForm';
@@ -18,6 +19,19 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient();
+
+export const menuList = [
+	{ title: 'Basic', link: '/basic', element: <BasicForm /> },
+	{ title: 'Nested', link: '/nested', element: <NestedForm /> },
+	{ title: 'Tab', link: '/tab', element: <TabForm /> },
+	{ title: 'Basic Array', link: '/basic-array', element: <BasicArray /> },
+	{ title: 'Logic', link: '/logic', element: <ArrayLogic /> },
+	{ title: 'Array', link: '/array', element: <ArrayForm /> },
+	{ title: 'Nested Array', link: '/nested-array', element: <NestedArray /> },
+	{ title: 'Infinity Array', link: '/infinity-array', element: <InfinityArray /> },
+	{ title: 'Exercise', link: '/exercise', element: <Exercise /> },
+];
+
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
@@ -38,14 +52,9 @@ root.render(
 								</Grid>
 							}
 						/>
-						<Route path='basic' element={<BasicForm />} />
-						<Route path='nested' element={<NestedForm />} />
-						<Route path='tab' element={<TabForm />} />
-						<Route path='basic-array' element={<BasicArray />} />
-						<Route path='logic' element={<ArrayLogic />} />
-						<Route path='array' element={<ArrayForm />} />
-						<Route path='nested-array' element={<NestedArray />} />
-						<Route path='infinity-array' element={<InfinityArray />} />
+						{menuList.map((item) => (
+							<Route key={item.link} path={item.link} element={item.element} />
+						))}
 					</Route>
 				</Routes>
 			</QueryClientProvider>

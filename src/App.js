@@ -2,6 +2,7 @@ import { Grid, Stack } from '@mui/material';
 import 'antd/dist/antd.min.css';
 import { NavLink, Outlet } from 'react-router-dom';
 import './App.css';
+import { menuList } from 'index';
 
 function App() {
 	return (
@@ -30,30 +31,11 @@ function App() {
 				<NavLink to='/'>
 					<span className='material-icons'>arrow_back_ios</span> Back
 				</NavLink>
-				<NavLink to='/basic' end>
-					Basic
-				</NavLink>
-				<NavLink to='/nested' end>
-					Nested
-				</NavLink>
-				<NavLink to='/tab' end>
-					Tab
-				</NavLink>
-				<NavLink to='/basic-array' end>
-					Basic Array
-				</NavLink>
-				<NavLink to='/logic' end>
-					Logic Array
-				</NavLink>
-				<NavLink to='/array' end>
-					Array
-				</NavLink>
-				<NavLink to='/nested-array' end>
-					Nested Array
-				</NavLink>
-				<NavLink to='/infinity-array' end>
-					Infiniti Array
-				</NavLink>
+				{menuList.map((item) => (
+					<NavLink key={item.link} to={item.link} end>
+						{item.title}
+					</NavLink>
+				))}
 			</Stack>
 			<Grid width='calc(100% - 200px)' p={4}>
 				<Outlet />
