@@ -6,6 +6,8 @@ import ArrayLogic from 'Modules/ArrayLogic';
 import BasicArray from 'Modules/BasicArray';
 import BasicForm from 'Modules/BasicForm';
 import Exercise from 'Modules/Exercise';
+import Exe1 from 'Modules/Exercise/Exe1';
+import Exe2 from 'Modules/Exercise/Exe2';
 import InfinityArray from 'Modules/InfinityArray';
 import NestedArray from 'Modules/NestedArray';
 import NestedForm from 'Modules/NestedForm';
@@ -29,7 +31,23 @@ export const menuList = [
 	{ title: 'Array', link: '/array', element: <ArrayForm /> },
 	{ title: 'Nested Array', link: '/nested-array', element: <NestedArray /> },
 	{ title: 'Infinity Array', link: '/infinity-array', element: <InfinityArray /> },
-	{ title: 'Exercise', link: '/exercise', element: <Exercise /> },
+	{
+		title: 'Exercise',
+		link: '/exercise',
+		element: <Exercise />,
+		children: [
+			{
+				title: '1',
+				link: '/exercise/exe-1',
+				element: <Exe1 />,
+			},
+			{
+				title: '2',
+				link: '/exercise/exe-2',
+				element: <Exe2 />,
+			},
+		],
+	},
 ];
 
 root.render(
@@ -53,7 +71,12 @@ root.render(
 							}
 						/>
 						{menuList.map((item) => (
-							<Route key={item.link} path={item.link} element={item.element} />
+							<Route key={item.link} path={item.link} element={item.element}>
+								<Route index />
+								{item.children?.map((child) => (
+									<Route key={child.link} path={child.link} element={child.element} />
+								))}
+							</Route>
 						))}
 					</Route>
 				</Routes>
